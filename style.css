@@ -1,1 +1,29 @@
+/* CSS File : styles.css */
+
+/* set the background color of the body to forest green */
+body {
+  background-color: forestgreen;
+  background-image: url("path/to/gardening-photo.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  color:white;
+}
+/* styling for button */
+button{
+  padding: 10px 20px;
+  background-color: grey;
+  color: white;
+  border-radius: 5px;
+  text-transform: uppercase;
+  margin-top: 20px;
+  cursor: pointer;
+}
+/* styling for time */
+#time{
+  font-size: 25px;
+  margin-top: 20px;
+}
 
