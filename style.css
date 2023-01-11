@@ -1,56 +1,28 @@
-/* CSS File : style.css */
+/* CSS File : styles.css */
 
-/* set the background color of the body to forest green */
+/* set the background color of the body to light green */
 body {
-  background-color: forestgreen;
-  background-image: url("path/to/gardening-photo.jpg");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
+  background-color: lightgreen;
   font-family: Arial, sans-serif;
   text-align: center;
-  color:white;
 }
 /* styling for button */
 button{
   padding: 10px 20px;
-  background-color: grey;
+  background-color: lightbrown;
   color: white;
   border-radius: 5px;
   text-transform: uppercase;
   margin-top: 20px;
   cursor: pointer;
 }
-/* styling for time */
-#time{
+/* styling for time and weather*/
+#time, #weather{
   font-size: 25px;
   margin-top: 20px;
+  color:lightbrown;
 }
-
-/* CSS File : styles.css */
-
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-}
-header {
-    background-color: forestgreen;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    padding: 1em;
-}
-header nav a{
-    color:white;
-    text-decoration: none;
-    margin-left: 1em;
-}
-main {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 1em;
-}
-main img{
-    max-width: 40%;
-    margin-right: 1;
+#weather {
+  float:left;
+  margin-left:20px;
 }
