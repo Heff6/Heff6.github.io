@@ -1,36 +1,87 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>English Ivy Plants</title>
+    <title>My Gardening Website</title>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <header>
-      <nav>
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Plants</a>
-        <a href="#">Care Guides</a>
-        <a href="#">Contact</a>
-      </nav>
-    </header>
-    <main>
-      <h1>English Ivy Plants</h1>
-      <section>
-        <img src="path/to/english-ivy-plant-image.jpg" alt="English Ivy Plant">
-        <p>English ivy is a popular climbing and ground-cover plant known for its evergreen leaves and ability to thrive in a wide range of conditions. It's perfect for adding a touch of greenery to indoor or outdoor spaces.</p>
-      </section>
-      <section>
-        <h2>Care Guides</h2>
-        <ul>
-          <li>How to Grow English Ivy</li>
-          <li>Caring for English Ivy in Winter</li>
-          <li>English Ivy Propagation</li>
-        </ul>
-      </section>
-    </main>
-    <footer>
-      <p>Copyright © 2023 TheSpruce</p>
-    </footer>
-  </body>
-</html>
+    <h1>Welcome to my gardening website!</h1>
+    <button id="myButton">Learn more</button>
+    <div id="info" style="display:none;">
+        <p>We have all the tips and tricks you need to become a gardening pro!</p>
+        <p>Join our community of green thumbs today.</p>
+        <p>One of the most popular choice for backyard gardening and commercial 
+          orchards is the Avocado tree. These trees are known for their large,
+          evergreen leaves and delicious, creamy fruit. The trees can grow to be
+          quite large, reaching up to 65 feet tall, but they can also be pruned and
+          kept smaller for backyard gardens. Avocado trees are native to Central and 
+          South America and are now grown in many warm climates around the world. They
+          are a relatively low maintenance tree but do require regular watering and
+          fertilizing to thrive. The fruit of the avocado tree, also known as 
+          an avocado or alligator pear, is a good source of healthy fats and is 
+          often used in a variety of dishes, including guacamole.</p>
+      <h3>Soil Health in Sydney, Australia</h3>
+      <p>The soil in Sydney, Australia is generally well-draining and fertile, but
+        it can be prone to acidity and low nutrient levels. To maintain the health 
+        of your avocado tree, it's important to regularly test the soil pH and nutrient
+        levels and amend the soil as needed with lime, compost, or other organic matter.
+        The avocado tree also prefers a well-draining soil, so if the soil in your area
+        is heavy or clay-like, consider amending it with sand or coarse materials to 
+        improve drainage.
+      </p> 
+      <h3>Pruning Avocado Trees</h3>
+      <p>Regular pruning is important for maintaining the health and productivity
+        of your avocado tree. The best time to prune an avocado tree is during the 
+        dormant season, typically between late fall and early winter. Start by removing 
+        any dead, diseased, or damaged branches, then selectively prune branches that are
+        crossing or rubbing against each other to improve air circulation. also
+        to maintain the shape of the tree and to control its size, you may want 
+        to remove water sprouts and suckers that are growing from the base of the
+        tree. Keep in mind, always use sharp and clean tools and follow proper
+        pruning techniques for the best results.</p>
+      
+    </div>
+    <div id="time"></div>
+    <script>
+    // get a reference to the button and time div
+    var button = document.getElementById("myButton");
+    var info = document.getElementById("info");
+    var time = document.getElementById("time");
+
+    // Get the current time in Sydney, Australia and update the time div with it
+    function updateTime() {
+      var date = new Date();
+      var options = {timeZone: "Australia/Sydney"};
+      var sydneyTime = date.toLocaleString("en-US", options);
+      time.innerHTML = sydneyTime;
+    }
+
+    updateTime();
+    setInterval(updateTime, 1000);
+
+    // attach a click event handler to the button
+    button.addEventListener("click", function() {
+      // toggle the display property of info element
+      if (info.style.display === "none") {
+          info.style.display = "block";
+      } else {
+          info.style.display = "none";
+      
+           // function to fetch and display weather data
+    function getWeather() {
+      var weatherApiUrl = "https://api.openweathermap.org/data/2.5/weather?q=Sydney,au&appid=your_api_key";
+      fetch(weatherApiUrl)
+        .then(function(response) {
+          return response.json();
+        })
+        .then(function(data) {
+          var weatherDiv = document.getElementById("weather");
+          weatherDiv.innerHTML = "Weather in Sydney: " + data.weather[0].main + "<br>" + data.main.temp + "&#8451;";
+        });
+    }
+    // call the function when the page is loaded
+    window.onload = getWeather;
+
+      }
+    });
+    </script>
