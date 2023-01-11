@@ -27,3 +27,30 @@ button{
   margin-top: 20px;
 }
 
+/* CSS File : styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+header {
+    background-color: forestgreen;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+}
+header nav a{
+    color:white;
+    text-decoration: none;
+    margin-left: 1em;
+}
+main {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1em;
+}
+main img{
+    max-width: 40%;
+    margin-right: 1;
+}
