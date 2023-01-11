@@ -2,34 +2,7 @@
 <html>
   <head>
     <title>My Gardening Website</title>
-    <style>
-      /* set the background color of the body to forest green */
-      body {
-        background-color: forestgreen;
-        background-image: url("path/to/gardening-photo.jpg");
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
-        font-family: Arial, sans-serif;
-        text-align: center;
-        color:white;
-      }
-      /* styling for button */
-      button{
-        padding: 10px 20px;
-        background-color: grey;
-        color: white;
-        border-radius: 5px;
-        text-transform: uppercase;
-        margin-top: 20px;
-        cursor: pointer;
-      }
-      /* styling for time */
-      #time{
-        font-size: 25px;
-        margin-top: 20px;
-      }
-    </style>
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <h1>Welcome to my gardening website!</h1>
@@ -40,31 +13,31 @@
     </div>
     <div id="time"></div>
     <script>
-      // get a reference to the button and time div
-      var button = document.getElementById("myButton");
-      var info = document.getElementById("info");
-      var time = document.getElementById("time");
-      
-      // Get the current time in Sydney, Australia and update the time div with it
-      function updateTime() {
-        var date = new Date();
-        var options = {timeZone: "Australia/Sydney"};
-        var sydneyTime = date.toLocaleString("en-US", options);
-        time.innerHTML = sydneyTime;
-      }
-      
-      updateTime();
-      setInterval(updateTime, 1000);
+    // get a reference to the button and time div
+    var button = document.getElementById("myButton");
+    var info = document.getElementById("info");
+    var time = document.getElementById("time");
 
-      // attach a click event handler to the button
-      button.addEventListener("click", function() {
-        // toggle the display property of info element
-        if (info.style.display === "none") {
-            info.style.display = "block";
-        } else {
-            info.style.display = "none";
-        }
-      });
+    // Get the current time in Sydney, Australia and update the time div with it
+    function updateTime() {
+      var date = new Date();
+      var options = {timeZone: "Australia/Sydney"};
+      var sydneyTime = date.toLocaleString("en-US", options);
+      time.innerHTML = sydneyTime;
+    }
+
+    updateTime();
+    setInterval(updateTime, 1000);
+
+    // attach a click event handler to the button
+    button.addEventListener("click", function() {
+      // toggle the display property of info element
+      if (info.style.display === "none") {
+          info.style.display = "block";
+      } else {
+          info.style.display = "none";
+      }
+    });
     </script>
   </body>
 </html>
